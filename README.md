@@ -12,7 +12,8 @@ View each floor of a building using an custom vertical 'explode' animation
 This effect is made up of three parts...
 
 1. Explode function (controlled by a slider)
-2. Adding smooth Animation to slider
+2. Slow down the ForgeViewer Camera
+2. Ease animation for level explode
 3. Restoring 4 different camera states   
 
 #### 1. Explode method for AEC / buildings
@@ -26,8 +27,15 @@ fragList.updateAnimTransform(fragId, null, null, pt);
 
 ```
 
+#### 2. Slow down the ForgeViewer Camera
+You can slow down the Forge Viewer's camera transitions using these two lines...
 
-#### Smooth animation library:
+```
+viewer.autocam.shotParams.destinationPercent=3;
+viewer.autocam.shotParams.duration = 3;
+```
+
+#### 3. Ease animation for level explode
 
 Next, I need to add smooth explode animation, when I click open or close.  I borrowed from this simple [example source-code](https://javascript.info/task/animate-ball-hops), and simply applied it to the [onSlider()](https://github.com/wallabyway/floor-animation/blob/a3199dc4a5d82df5146db8b795e3459df90e85e8/docs/app.js#L31-L33) method
 
@@ -52,11 +60,18 @@ function animate({timing, draw, duration}) {
 
 ```
 
-#### Add Smooth camera transitions
-Last but not least... You can slow down the Forge Viewer's camera transitions using these two lines...
+#### 4. Restoring 4 different camera states
+
+I've done this trick a few times [before](https://forge.autodesk.com/blog/3d-markup-icons-and-info-card).
+
+Simply set up your camera view and hide objects in the scene manually, then capture the camera-state using...
 
 ```
-viewer.autocam.shotParams.destinationPercent=3;
-viewer.autocam.shotParams.duration = 3;
-```
+view_state_level1 = viewer.getState()
+```  
 
+Then build a menu with buttons, with each button restoring your pre-canned view, like this...
+
+```
+viewer.restoreState(view_state_level1)
+```  
