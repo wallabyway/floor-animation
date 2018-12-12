@@ -17,6 +17,8 @@ function loadModel(urn) {
         viewer.start(svf, { sharedPropertyDbPath: doc.getPropertyDbPath() }, e => {
           viewer.setTheme("light-theme");
           viewer.restoreState(vstates[0]);
+          viewer.autocam.shotParams.destinationPercent=3;
+          viewer.autocam.shotParams.duration = 3;
         });
     });
 }
