@@ -1,0 +1,36 @@
+<head>
+	<meta charset="utf-8" />
+	<title>AEC-Floors Animation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="./skeleton.min.css">
+	<link rel="shortcut icon" href="#">
+</head>
+
+
+<body style="margin:0; overflow-y: hidden;">
+
+  <div class="container">
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><img class="navbar-img" src="logo.png"/></li>
+          <li class="navbar-item"><button onClick="openView()" class="navbar-button">Open</button></li>
+          <li class="navbar-item"><button onClick="openView(1)" class="navbar-button button-primary">Level 1</button></li>
+          <li class="navbar-item"><button onClick="openView(2)" class="navbar-button button-primary">Level 2</button></li>
+          <li class="navbar-item"><button onClick="openView(3)" class="navbar-button button-primary">Level 3</button></li>
+          <li class="navbar-item"><button onClick="resetView()" class="navbar-button">Close</button></li>
+          <li class="navbar-item mobile"><input class="navbar-button" id="level-slider" type="range" min="0" max="1" step="0.01" value="0" oninput="onSlider(value)"></li>
+
+          <li class="navbar-itemr"><button onClick="window.open('https://github.com/wallabyway/floor-animation')" class="navbar-button">Github</button></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="forgeViewer"></div>
+</body>
+
+<link rel="stylesheet" href="https://developer.api.autodesk.com/viewingservice/v1/viewers/style.min.css?v=v6.*" type="text/css">
+<script language="JavaScript" src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js?v=v6.*"></script>
+<script language="JavaScript" src="https://xf79h9aa3l.execute-api.us-west-2.amazonaws.com/toolkit2/api/_adsk.js"></script>
+<script language="JavaScript" src="app.js"></script>
+<script language="JavaScript" src="floorExplode.js"></script>
