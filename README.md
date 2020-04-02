@@ -2,7 +2,9 @@
 
 View each floor of a building using an custom vertical 'explode' animation
 
-### Demo: [DEMO](https://wallabyway.github.io/floor-animation/)
+### Live Demo: [DEMO](https://wallabyway.github.io/floor-animation/)
+
+### Blog: https://forge.autodesk.com/blog/view-each-floor-using-vertical-explode
 
 <img src="https://user-images.githubusercontent.com/440241/49845651-68c03880-fd7c-11e8-9c6b-fa12e5650dab.gif" width=640px />
 
